@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import PersonContext from "../../context/person";
+import "./ComponentA.styles.css";
 
 export default function ComponentA() {
   const [person1, setperson1] = useState("");
@@ -17,40 +18,45 @@ export default function ComponentA() {
   };
 
   return (
-    <>
-      <p>Componente A:</p>
+    <div className="container">
+      <p className="title">Componente A:</p>
       <div>
-        <>
-          <label htmlFor="person1">Pessoa 1: </label>
-          <input
-            type="text"
-            id="person1"
-            onChange={({ target }) => setperson1(target.value)}
-          />
-        </>
+        <label className="label" htmlFor="person1">
+          Pessoa 1:{" "}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="person1"
+          onChange={({ target }) => setperson1(target.value)}
+        />
       </div>
 
       <div>
-        <>
-          <label htmlFor="person2">Pessoa 2: </label>
-          <input
-            type="text"
-            id="person2"
-            onChange={({ target }) => setperson2(target.value)}
-          />
-        </>
+        <label className="label" htmlFor="person2">
+          Pessoa 2:{" "}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="person2"
+          onChange={({ target }) => setperson2(target.value)}
+        />
       </div>
       <div>
-        <>
-          <label htmlFor="person3">Pessoa 3: </label>
-          <input
-            type="text"
-            id="person3"
-            onChange={({ target }) => setperson3(target.value)}
-          />
-        </>
+        <label className="label" htmlFor="person3">
+          Pessoa 3:{" "}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="person3"
+          onChange={({ target }) => setperson3(target.value)}
+        />
       </div>
-      <button onClick={handleSubmit}>Enviar</button>
-    </>
+      <button className="button" onClick={handleSubmit}>
+        Enviar
+      </button>
+    </div>
   );
 }
